@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        int currentYear = 2022;
+        int currentYear = 2023;
 //        String userDateOfBirth = "1999";
 //
 //        int dateOfBirth = Integer.parseInt(userDateOfBirth);
@@ -12,11 +12,18 @@ public class Main {
 //        System.out.println("The user says he's " + ageWithPartialYear);
 
         System.out.println(getInputFromConsole(currentYear));
+        System.out.println(getInputFromScanner(currentYear));
     }
 
     public static String getInputFromConsole(int currentYear){
 
-        return "";
+        String name = System.console().readLine("Hi, What's your name? ");
+        System.out.println("Hi " + name + ", Welcome to the jungle");
+
+        String dateOfBirth = System.console().readLine("What year were you born? ");
+        int age = currentYear - Integer.parseInt(dateOfBirth);
+
+        return "So you are " + age + " years old";
     }
 
     public static String getInputFromScanner(int currentYear){
